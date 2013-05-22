@@ -72,6 +72,18 @@ public class OreWorldGen implements IWorldGenerator
 		(new WorldGenMinable(TeslaCraftMC.PlatinumOre.blockID, 10)).generate(world, rand,
 				randPosX, randPosY, randPosZ);
 		}
+		
+		//3 Veins of ore per chunk
+		for (int i = 0; i < 3; i++)
+		{
+			//16x16 area up to 64
+			int randPosX = chunkX + rand.nextInt(16);
+			int randPosY = rand.nextInt(20);
+			int randPosZ = chunkZ + rand.nextInt(16);
+		//10 blocks per vein
+		(new WorldGenMinable(TeslaCraftMC.ChromiumOre.blockID, 10)).generate(world, rand,
+				randPosX, randPosY, randPosZ);
+		}
 	}
 	
 	private void generateEnd() 
