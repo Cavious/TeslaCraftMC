@@ -18,10 +18,13 @@ public class TeslaCraftMC
 {
 	public static final String modid = "Cavious_TeslaCraft-MC";
 	
-	public static final Block CopperOre = new CopperOre(600, Material.rock).setUnlocalizedName("CopperOre").setStepSound(Block.soundStoneFootstep).setHardness(0.2F).setCreativeTab(CreativeTabs.tabBlock);
-	public static final Block SilverOre = new SilverOre(601, Material.rock).setUnlocalizedName("SilverOre").setStepSound(Block.soundStoneFootstep).setHardness(0.2F).setCreativeTab(CreativeTabs.tabBlock);
-	public static final Block PlatinumOre = new PlatinumOre(602, Material.rock).setUnlocalizedName("PlatinumOre").setStepSound(Block.soundStoneFootstep).setHardness(0.2F).setCreativeTab(CreativeTabs.tabBlock);
-	public static final Block ChromiumOre = new ChromiumOre(603, Material.rock).setUnlocalizedName("ChromiumOre").setStepSound(Block.soundStoneFootstep).setHardness(0.2F).setCreativeTab(CreativeTabs.tabBlock);
+	public static CreativeTabs TabTeslaCraftMC = new TabTeslaCraftMC(CreativeTabs.getNextID(),"TeslaCraft-MC");
+	
+	public static final Block CopperOre = new CopperOre(600, Material.rock).setUnlocalizedName("CopperOre").setStepSound(Block.soundStoneFootstep).setHardness(0.2F).setCreativeTab(TeslaCraftMC.TabTeslaCraftMC);
+	public static final Block SilverOre = new SilverOre(601, Material.rock).setUnlocalizedName("SilverOre").setStepSound(Block.soundStoneFootstep).setHardness(0.3F).setCreativeTab(TeslaCraftMC.TabTeslaCraftMC);
+	public static final Block PlatinumOre = new PlatinumOre(602, Material.rock).setUnlocalizedName("PlatinumOre").setStepSound(Block.soundStoneFootstep).setHardness(0.4F).setCreativeTab(TeslaCraftMC.TabTeslaCraftMC);
+	public static final Block ChromiumOre = new ChromiumOre(603, Material.rock).setUnlocalizedName("ChromiumOre").setStepSound(Block.soundStoneFootstep).setHardness(0.4F).setCreativeTab(TeslaCraftMC.TabTeslaCraftMC);
+	public static final Block AluminumOre = new AluminumOre(604, Material.rock).setUnlocalizedName("AluminumOre").setStepSound(Block.soundStoneFootstep).setHardness(0.1F).setCreativeTab(TeslaCraftMC.TabTeslaCraftMC);
 
 	
 	@Init
@@ -32,17 +35,20 @@ public class TeslaCraftMC
 		GameRegistry.registerBlock(SilverOre, modid + SilverOre.getUnlocalizedName()) ;
 		GameRegistry.registerBlock(PlatinumOre, modid + PlatinumOre.getUnlocalizedName()) ;
 		GameRegistry.registerBlock(ChromiumOre, modid + ChromiumOre.getUnlocalizedName()) ;
+		GameRegistry.registerBlock(AluminumOre, modid + AluminumOre.getUnlocalizedName()) ;
 		//Block in-game Name
 		LanguageRegistry.addName(CopperOre, "Copper Ore");
 		LanguageRegistry.addName(SilverOre, "Silver Ore");
 		LanguageRegistry.addName(PlatinumOre, "Platinum Ore");
 		LanguageRegistry.addName(ChromiumOre, "Chromium Ore");
+		LanguageRegistry.addName(AluminumOre, "Aluminum Ore");
 		
 		//Effective Tool 0 = wood, 1 = stone, 2 = iron, 3 = diamond
 		MinecraftForge.setBlockHarvestLevel(CopperOre, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(SilverOre, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(PlatinumOre, "pickaxe", 1);
 		MinecraftForge.setBlockHarvestLevel(ChromiumOre, "pickaxe", 2);
+		MinecraftForge.setBlockHarvestLevel(AluminumOre, "pickaxe", 0);
 		
 		//Crafting Recipe
 		
